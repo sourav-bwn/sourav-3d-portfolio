@@ -14,8 +14,8 @@ interface Project {
 const projects: Project[] = [
   {
     number: '01',
-    name: 'Nextlevel Studio',
-    category: 'Client',
+    name: 'AI Metaverse Portfolio OS',
+    category: 'Systems',
     col1Img1:
       'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png&w=1280&q=85',
     col1Img2:
@@ -25,8 +25,8 @@ const projects: Project[] = [
   },
   {
     number: '02',
-    name: 'Aura Brand Identity',
-    category: 'Personal',
+    name: 'API-Based AI Application',
+    category: 'API',
     col1Img1:
       'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85',
     col1Img2:
@@ -36,8 +36,8 @@ const projects: Project[] = [
   },
   {
     number: '03',
-    name: 'Solaris Digital',
-    category: 'Client',
+    name: 'Offline AI System',
+    category: 'Local',
     col1Img1:
       'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png&w=1280&q=85',
     col1Img2:

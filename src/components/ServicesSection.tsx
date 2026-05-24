@@ -3,33 +3,33 @@ import FadeIn from './FadeIn'
 const services = [
   {
     number: '01',
-    title: '3D Modeling',
+    title: 'AI Systems',
     description:
-      'Creation of detailed objects, characters, or environments tailored to specific client needs, ideal for games, products, and visualizations.',
+      'Building autonomous AI agents and intelligent systems that think, act, automate, and evolve. Connecting disparate intelligence into unified, responsive ecosystems.',
   },
   {
     number: '02',
-    title: 'Rendering',
+    title: 'Visual Design',
     description:
-      'High-quality, photorealistic renders that showcase designs with custom lighting, textures, and materials to bring concepts to life.',
+      'Cinematic grading with a proprietary visual language — the 001 Code. Crafting atmospheric, minimal designs with attention to color, lighting, and spatial harmony.',
   },
   {
     number: '03',
     title: 'Motion Design',
     description:
-      'Dynamic animations and motion graphics that add energy and storytelling to brands, products, and digital experiences.',
+      'Dynamic animations and motion graphics that add energy and storytelling to brands, products, and digital experiences with cinematic polish.',
   },
   {
     number: '04',
-    title: 'Branding',
+    title: 'Brand Identity',
     description:
-      'Crafting cohesive visual identities — from logos to full brand systems — that communicate a clear and memorable presence.',
+      'Algorithmic generation of cohesive visual identities — from logos to full brand systems — aligned with a core narrative and audience psychology.',
   },
   {
     number: '05',
-    title: 'Web Design',
+    title: 'Frontend Engineering',
     description:
-      'Designing clean, modern, and conversion-focused websites with attention to layout, typography, and user experience.',
+      'Designing and engineering modern, immersive websites with clean architecture, creative technology, and user experience at the forefront.',
   },
 ]
 

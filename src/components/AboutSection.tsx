@@ -58,7 +58,7 @@ const AboutSection = () => {
           </FadeIn>
 
           <AnimatedText
-            text="With more than five years of experience in design, i focus on branding, web design, and user experience, i truly enjoy working with businesses that aim to stand out and present their best image. Let's build something incredible together!"
+            text="Most people use technology. I imagine what it could become. On one side lives the artist — crafting visual identity, cinematic atmosphere, and interface beauty. On the other, the builder — engineering autonomous AI agents, immersive systems, and intelligent architectures that think, act, and evolve. Let's build something incredible together."
             className="text-[#D7E2EA] font-medium text-center leading-relaxed max-w-[560px]"
             style={{ fontSize: 'clamp(1rem, 2vw, 1.35rem)' }}
           />

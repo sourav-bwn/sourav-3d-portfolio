@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import ContactButton from './ContactButton'
 import Magnet from './Magnet'
 
-const navLinks = ['About', 'Price', 'Projects', 'Contact']
+const navLinks = ['About', 'Services', 'Projects', 'Contact']
 
 const navVariants = {
   hidden: { opacity: 0, y: -20 },
@@ -37,7 +37,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            Hi, i&apos;m jack
+            Hi, i&apos;m Sourav
           </motion.h1>
         </div>
 
@@ -49,7 +49,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            a 3d creator driven by crafting striking and unforgettable projects
+            an architect of futures, one foot in creativity, one in engineering
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
