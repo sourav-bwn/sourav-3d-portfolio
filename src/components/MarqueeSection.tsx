@@ -31,7 +31,7 @@ const triple = <T,>(arr: T[]): T[] => [...arr, ...arr, ...arr]
 
 const ImageTile = ({ src }: { src: string }) => (
   <div className="flex-shrink-0 w-[420px] h-[270px] rounded-2xl overflow-hidden">
-    <img src={src} alt="" className="w-full h-full object-cover" loading="lazy" />
+    <img src={src} alt="" className="w-full h-full object-cover" loading="lazy" draggable={false} />
   </div>
 )
 
@@ -42,7 +42,7 @@ const MarqueeSection = () => {
   const handleScroll = useCallback(() => {
     if (!sectionRef.current) return
     const rect = sectionRef.current.getBoundingClientRect()
-    const val = (window.scrollY - rect.top + window.innerHeight) * 0.3
+    const val = (window.innerHeight - rect.top) * 0.3
     setOffset(val)
   }, [])
 

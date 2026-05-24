@@ -63,7 +63,7 @@ const Card = ({ project, index }: { project: Project; index: number }) => {
     <div ref={ref} className="sticky top-24 md:top-32 h-[85vh] flex items-center justify-center">
       <motion.div
         style={{ scale, top: `${index * 28}px` }}
-        className="relative rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:p-6 md:p-8 w-full max-w-6xl mx-auto"
+        className="relative rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:p-6 md:p-8 w-full max-w-6xl mx-auto origin-top"
       >
         <div className="flex items-start justify-between mb-6 sm:mb-8 md:mb-10">
           <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
@@ -94,14 +94,14 @@ const Card = ({ project, index }: { project: Project; index: number }) => {
               src={project.col1Img1}
               alt=""
               loading="lazy"
-              className="w-full object-cover rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
+              className="w-full object-cover object-center rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
               style={{ height: 'clamp(130px, 16vw, 230px)' }}
             />
             <img
               src={project.col1Img2}
               alt=""
               loading="lazy"
-              className="w-full object-cover rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
+              className="w-full object-cover object-center rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
               style={{ height: 'clamp(160px, 22vw, 340px)' }}
             />
           </div>
@@ -110,7 +110,7 @@ const Card = ({ project, index }: { project: Project; index: number }) => {
               src={project.col2Img}
               alt=""
               loading="lazy"
-              className="w-full h-full object-cover rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
+              className="w-full h-full object-cover object-center rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
             />
           </div>
         </div>
