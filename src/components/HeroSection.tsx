@@ -2,7 +2,12 @@ import { motion } from 'framer-motion'
 import ContactButton from './ContactButton'
 import Magnet from './Magnet'
 
-const navLinks = ['About', 'Services', 'Projects', 'Contact']
+const navLinks = [
+  { label: 'About', href: '#about' },
+  { label: 'Services', href: '#services' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Contact', href: '#contact' },
+]
 
 const navVariants = {
   hidden: { opacity: 0, y: -20 },
@@ -20,11 +25,11 @@ const HeroSection = () => {
       >
         {navLinks.map((link) => (
           <a
-            key={link}
-            href="#"
+            key={link.label}
+            href={link.href}
             className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200"
           >
-            {link}
+            {link.label}
           </a>
         ))}
       </motion.nav>
