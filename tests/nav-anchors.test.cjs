@@ -56,3 +56,11 @@ test('anchor navigation scrolls smoothly', () => {
   const css = read('index.css');
   assert.ok(/scroll-behavior:\s*smooth/.test(css), 'index.css should enable smooth scrolling');
 });
+
+test('hero Contact Me button is not hidden under the portrait layer', () => {
+  const hero = read('components/HeroSection.tsx');
+  // The portrait sits in a z-10 magnet layer; the button wrapper must stack above it
+  // or the portrait image swallows clicks at the button's centre.
+  const wrapper = hero.split('<ContactButton />')[0].split('<motion.div').pop();
+  assert.ok(/z-20|z-30|z-\[/.test(wrapper), 'hero ContactButton wrapper must carry a z-index above the z-10 portrait');
+});
