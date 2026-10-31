@@ -139,7 +139,7 @@ const AIChatbot = () => {
       {/* Trigger */}
       <button
         onClick={() => setOpen(!open)}
-        className="fixed bottom-7 right-7 z-[9999] w-[110px] h-[110px] bg-transparent border-none cursor-pointer p-0 transition-transform duration-200 hover:scale-110"
+        className="fixed bottom-24 right-4 sm:bottom-7 sm:right-7 z-[9999] w-[110px] h-[110px] bg-transparent border-none cursor-pointer p-0 transition-transform duration-200 hover:scale-110"
         title="Talk to Sourav's AI"
       >
         <svg viewBox="0 0 110 120" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
