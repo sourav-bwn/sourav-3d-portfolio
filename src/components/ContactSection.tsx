@@ -59,7 +59,7 @@ const socials = [
 
 const ContactSection = () => {
   return (
-    <section className="bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 text-center">
+    <section id="contact" className="bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 text-center">
       <div className="w-px h-16 bg-gradient-to-b from-transparent to-[#D7E2EA]/30 mx-auto mb-10" />
       <FadeIn delay={0} y={40}>
         <span className="text-[#D7E2EA]/50 font-light uppercase tracking-[0.3em] text-xs sm:text-sm block mb-2">
