@@ -121,7 +121,7 @@ const Card = ({ project, index }: { project: Project; index: number }) => {
 
 const ProjectsSection = () => {
   return (
-    <section className="bg-[#0C0C0C] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 z-10 relative px-5 sm:px-8 md:px-10 pt-20 sm:pt-24 md:pt-32 pb-32">
+    <section id="projects" className="bg-[#0C0C0C] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 z-10 relative px-5 sm:px-8 md:px-10 pt-20 sm:pt-24 md:pt-32 pb-32">
       <h2
         className="hero-heading font-black uppercase leading-none tracking-tight text-center"
         style={{ fontSize: 'clamp(3rem, 12vw, 160px)', marginBottom: 'clamp(4rem, 8vw, 7rem)' }}
