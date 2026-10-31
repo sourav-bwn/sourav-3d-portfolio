@@ -64,3 +64,10 @@ test('hero Contact Me button is not hidden under the portrait layer', () => {
   const wrapper = hero.split('<ContactButton />')[0].split('<motion.div').pop();
   assert.ok(/z-20|z-30|z-\[/.test(wrapper), 'hero ContactButton wrapper must carry a z-index above the z-10 portrait');
 });
+
+test('chatbot trigger does not cover the hero Contact Me button on phones', () => {
+  const bot = read('components/AIChatbot.tsx');
+  // The hero CTA sits bottom-right on mobile; a bottom-7 fixed trigger overlaps it at
+  // 390px width, so the trigger must lift above it on small screens.
+  assert.ok(/bottom-24\s+right-4\s+sm:bottom-7\s+sm:right-7/.test(bot), 'chatbot trigger must lift above the hero CTA on small screens');
+});
