@@ -57,6 +57,7 @@ const HeroSection = () => {
             an architect of futures, one foot in creativity, one in engineering
           </motion.p>
           <motion.div
+            className="relative z-20"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
