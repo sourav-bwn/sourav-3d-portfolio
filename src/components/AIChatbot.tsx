@@ -21,6 +21,16 @@ PERSONALITY RULES:
 • Never break character — you ARE part of Sourav's world
 • Always answer in the language the user writes in`
 
+// The DOM lib has no SpeechRecognition type; the subset this widget uses.
+interface SpeechRecognitionLike {
+  lang: string
+  interimResults: boolean
+  onresult: ((e: SpeechRecognitionEvent) => void) | null
+  onend: (() => void) | null
+  start: () => void
+  stop: () => void
+}
+
 interface Message {
   role: 'user' | 'assistant'
   content: string
@@ -35,7 +45,7 @@ const AIChatbot = () => {
   const [loading, setLoading] = useState(false)
   const [listening, setListening] = useState(false)
   const msgsRef = useRef<HTMLDivElement>(null)
-  const recogRef = useRef<any>(null)
+  const recogRef = useRef<SpeechRecognitionLike | null>(null)
 
   const scrollDown = useCallback(() => {
     setTimeout(() => {
@@ -52,7 +62,7 @@ const AIChatbot = () => {
   const speak = useCallback((text: string) => {
     if (!window.speechSynthesis) return
     window.speechSynthesis.cancel()
-    const clean = text.replace(/[⚡🔷]/g, '').replace(/<[^>]+>/g, '')
+    const clean = text.replace(/[⚡🔷]/gu, '').replace(/<[^>]+>/g, '')
     const utt = new SpeechSynthesisUtterance(clean)
     utt.rate = 0.95
     utt.pitch = 0.9
@@ -92,9 +102,9 @@ const AIChatbot = () => {
         })
         if (!res.ok) throw new Error('API error')
         const data = await res.json()
-        reply = data.content?.map((b: any) => b.text || '').join('') || ''
+        reply = data.content?.map((b: { text?: string }) => b.text || '').join('') || ''
       } catch {
-        reply = "Hey! 👋 I'm Sourav's AI. I'd love to chat, but I need an Anthropic API key to work. Drop Sourav a message at sg5517419@gmail.com to get connected!"
+        reply = "Hey! 👋 I'm Sourav's AI. I'd love to chat, but I need an Anthropic API key to work. Drop Sourav a message at souravgarai.bwn@gmail.com to get connected!"
       }
 
       addMsg(reply, 'assistant')
@@ -110,7 +120,8 @@ const AIChatbot = () => {
       setListening(false)
       return
     }
-    const SR = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition
+    const w = window as unknown as { SpeechRecognition?: new () => SpeechRecognitionLike; webkitSpeechRecognition?: new () => SpeechRecognitionLike }
+    const SR = w.SpeechRecognition || w.webkitSpeechRecognition
     if (!SR) {
       addMsg('Voice input not supported in this browser.', 'assistant')
       return
@@ -129,10 +140,18 @@ const AIChatbot = () => {
     setListening(true)
   }
 
-  if (typeof window !== 'undefined' && window.speechSynthesis) {
+  // Voice list loading is a side effect: subscribe in an effect, not during render.
+  useEffect(() => {
+    if (!window.speechSynthesis) return
     speechSynthesis.getVoices()
-    speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices()
-  }
+    const onVoicesChanged = () => speechSynthesis.getVoices()
+    speechSynthesis.onvoiceschanged = onVoicesChanged
+    return () => {
+      if (speechSynthesis.onvoiceschanged === onVoicesChanged) {
+        speechSynthesis.onvoiceschanged = null
+      }
+    }
+  }, [])
 
   return (
     <>
